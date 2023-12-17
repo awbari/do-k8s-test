@@ -6,7 +6,7 @@ resource "digitalocean_kubernetes_cluster" "primary" {
   node_pool {
     name       = "test-cluster-pool"
     size       = "s-1vcpu-2gb"
-    node_count = 1
+    node_count = 2
   }
 }
 

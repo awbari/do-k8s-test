@@ -1,4 +1,9 @@
 
+variable "GH_TOKEN" {
+  type        = string
+  sensitive   = true
+}
+
 variable "DO_APIKEY" {
   type        = string
   sensitive   = true

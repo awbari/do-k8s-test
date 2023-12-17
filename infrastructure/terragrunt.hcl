@@ -17,23 +17,3 @@ terraform {
 
 EOF
 }
-
-
-generate "required_providers" {
-  path      = "required_providers_generated.tf"
-  if_exists = "overwrite_terragrunt"
-  contents  = <<EOF
-terraform {
-  required_providers {
-    digitalocean = {
-      source  = "digitalocean/digitalocean"
-      version = "~> 2.10.1"
-    }
-  }
-}
-
-provider "digitalocean" {
-  token = var.DO_APIKEY
-}
-EOF
-}
