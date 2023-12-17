@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+        - name: test
+          image: ghcr.io/traefik/whoami:KUSTOMIZE_IMAGE_VERSION
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP

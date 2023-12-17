@@ -1,0 +1,8 @@
+.env
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*_generated.tf
+
+config-do-test-cluster.yaml
