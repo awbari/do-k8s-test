@@ -1,0 +1,6 @@
+creation_rules:
+  - age: 'age1lqrm66dsqlnpyqe6zav95kvaedj2cen8kda9hle73rq33lsj9yhstmegmj'
+    encrypted_regex: ^(data|stringData)$
+    path_regex: '.*\/secrets.yaml$'
+  - age: 'age1lqrm66dsqlnpyqe6zav95kvaedj2cen8kda9hle73rq33lsj9yhstmegmj'
+    path_regex: 'infrastructure\/secrets.yaml$'

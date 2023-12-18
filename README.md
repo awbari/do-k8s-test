@@ -1,5 +1,15 @@
 # digitalocean k8s test cluster
 
+## TODO
+
+* [x] Setup kubernetes through terraform
+* [x] Setup flux GitOps
+* [x] Add Domain
+* [x] Install nginx ingress
+* [ ] Add SOPS Secrets (for flux)
+* [ ] Add [External DNS](https://www.digitalocean.com/community/tutorials/how-to-automatically-manage-dns-records-from-digitalocean-kubernetes-using-externaldns) for automatic DNS entries through ingress
+* [ ] Add tls
+
 ## Manual steps
 
 * Create a spaces bucket
@@ -8,9 +18,12 @@
 
 ## Deploy infrastructure
 
+* Secret key is present in `~/.config/sops/age/keys.txt`
+
 ```sh
 cd infrastructure
-terragrunt apply
+sops exec-env secrets.yaml 'terragrunt plan'
+sops exec-env secrets.yaml 'terragrunt apply'
 ```
 
 The kubeconfig will be written to `./config-do-test-cluster.yaml`.
@@ -25,10 +38,7 @@ k9s # start k9s for example
 
 ## Deploy services
 
-```
-cd services/xy
-kubectl apply -k .
-```
+Services should be deployed via flux. Flux is watching on `./k8s/kustomization.yaml`.
 
 ## references
 
@@ -36,3 +46,4 @@ kubectl apply -k .
 * [Terraform + Flux Learning Video](https://www.digitalocean.com/community/tech-talks/automating-gitops-and-continuous-delivery-with-digitalocean-kubernetes)
 * [DOKS Start Kits](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers)
 * [DOKS Container Blueprints](https://github.com/digitalocean/container-blueprints)
+* [Flux SOPS](https://fluxcd.io/flux/guides/mozilla-sops/)
