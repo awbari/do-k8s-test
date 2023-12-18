@@ -55,7 +55,8 @@ spec:
       - name: external-dns
         image: registry.k8s.io/external-dns/external-dns:v0.14.0
         args:
-        - --source=service # ingress is also possible
+        - --log-level=trace
+        - --source=ingress
         - --provider=digitalocean
         env:
         - name: DO_TOKEN
