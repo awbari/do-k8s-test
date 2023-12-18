@@ -18,4 +18,5 @@ resource "flux_bootstrap_git" "this" {
     "source-controller",
     "kustomize-controller",
   ]
+  kustomization_override = file("${path.module}/flux-kustomization.yaml")
 }
