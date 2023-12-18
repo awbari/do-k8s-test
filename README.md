@@ -14,7 +14,12 @@
 
 * Create a spaces bucket
 * Create API Keys for Spaces
-* Paste API Keys in `.env`
+* Create a age secret key `age-keygen`
+* Paste API Keys via sops in `infrastructure/secrets.yaml`
+* Create sops age secret for flux: 
+  ```
+  cat path/to/key.txt | kubectl create secret generic sops-age --namespace=flux-system --from-file=age.agekey=/dev/stdin
+  ```
 
 ## Deploy infrastructure
 
