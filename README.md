@@ -6,7 +6,7 @@
 * [x] Setup flux GitOps
 * [x] Add Domain
 * [x] Install nginx ingress
-* [ ] Add SOPS Secrets (for flux)
+* [x] Add SOPS Secrets (for flux)
 * [ ] Add [External DNS](https://www.digitalocean.com/community/tutorials/how-to-automatically-manage-dns-records-from-digitalocean-kubernetes-using-externaldns) for automatic DNS entries through ingress
 * [ ] Add tls
 
@@ -52,3 +52,5 @@ Services should be deployed via flux. Flux is watching on `./k8s/kustomization.y
 * [DOKS Start Kits](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers)
 * [DOKS Container Blueprints](https://github.com/digitalocean/container-blueprints)
 * [Flux SOPS](https://fluxcd.io/flux/guides/mozilla-sops/)
+* [DOKS ExternalDNS](https://www.digitalocean.com/community/tutorials/how-to-automatically-manage-dns-records-from-digitalocean-kubernetes-using-externaldns)
+* [ExternalDNS Provider DigitalOcean](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/digitalocean.md)
