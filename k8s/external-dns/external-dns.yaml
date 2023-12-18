@@ -8,16 +8,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: external-dns
-  namespace: test
 rules:
 - apiGroups: [""]
-  resources: ["services"]
-  verbs: ["get","watch","list"]
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get","watch","list"]
-- apiGroups: [""]
-  resources: ["services","endpoints","pods"]
+  resources: ["networking", "services","endpoints","pods"]
   verbs: ["get","watch","list"]
 - apiGroups: ["extensions","networking.k8s.io"]
   resources: ["ingresses"] 
@@ -25,9 +18,6 @@ rules:
 - apiGroups: [""]
   resources: ["nodes"]
   verbs: ["list"]
-- apiGroups: [""]
-  resources: ["endpoints"]
-  verbs: ["get","watch","list"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
