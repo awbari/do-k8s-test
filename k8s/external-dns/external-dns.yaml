@@ -67,4 +67,5 @@ spec:
           valueFrom:
             secretKeyRef:
               name: ingress-secret
+              namespace: test
               key: DO_API_KEY
