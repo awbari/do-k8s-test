@@ -50,3 +50,4 @@ Services should be deployed via flux. Flux is watching on `./k8s/kustomization.y
 * [Flux SOPS](https://fluxcd.io/flux/guides/mozilla-sops/)
 * [DOKS ExternalDNS](https://www.digitalocean.com/community/tutorials/how-to-automatically-manage-dns-records-from-digitalocean-kubernetes-using-externaldns)
 * [ExternalDNS Provider DigitalOcean](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/digitalocean.md)
+* [DOKS LB Config](https://docs.digitalocean.com/products/kubernetes/how-to/configure-load-balancers/)
