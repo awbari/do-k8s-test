@@ -6,9 +6,9 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
+  - secretName: nalut.de # same as in issuer
+    hosts:
       - "*.nalut.de"
-    secretName: tls-nalut.de
   rules:
     - host: whoami.nalut.de
       http:
