@@ -5,6 +5,10 @@ metadata:
   namespace: test
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - "*.nalut.de"
+    secretName: tls-nalut.de
   rules:
     - host: whoami.nalut.de
       http:
