@@ -59,6 +59,7 @@ spec:
         - --source=service
         - --provider=digitalocean
         - --interval=3m
+        - --ignore-ingress-tls-spec # ignores wildcard definitions
         env:
         - name: DO_TOKEN
           valueFrom:
