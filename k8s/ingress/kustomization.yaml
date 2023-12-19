@@ -6,4 +6,3 @@ resources:
 - secrets.yaml
 - nginx-ingress.yaml
 - external-dns.yaml
-- ingress.yaml
