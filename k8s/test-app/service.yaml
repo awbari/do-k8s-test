@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: test-app
   namespace: test
-  annotations:
-    external-dns.alpha.kubernetes.io/hostname: echo.nalut.de
 spec:
-  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 3000

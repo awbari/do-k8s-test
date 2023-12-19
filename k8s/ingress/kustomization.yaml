@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - secrets.yaml
-- external-dns.yaml
 - nginx-ingress.yaml
+- external-dns.yaml
+- ingress.yaml
