@@ -51,7 +51,7 @@ sops exec-env secrets.yaml 'terragrunt apply'
 
 A successful apply will generate a kubeconfig in `./config-do-test-cluster.yaml`. Copy that kubeconfig to `~/.kube` and export the envvar `export KUBECONFIG=~/.kube/config-do-test-cluster.yaml`. 
 
-Manifests in `./k8s` a applied automatically. 
+Manifests in `./k8s` are applied automatically. 
 
 ## references
 
