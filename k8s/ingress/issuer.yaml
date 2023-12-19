@@ -24,7 +24,7 @@ metadata:
 spec:
   secretName: nalut.de
   issuerRef:
-    name: letsencrypt-dev-wcard
+    name: letsencrypt-wcard
     kind: Issuer
     group: cert-manager.io
   commonName: "*.nalut.de"
