@@ -1,7 +1,8 @@
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
+kind: Issuer
 metadata:
   name: letsencrypt-wcard
+  namepace: test
 spec:
   acme:
     email: jan@ubari.de
@@ -24,7 +25,7 @@ spec:
   secretName: nalut.de-tls
   issuerRef:
     name: letsencrypt-wcard
-    kind: ClusterIssuer
+    kind: Issuer
     group: cert-manager.io
   commonName: "*.nalut.de"
   dnsNames:
