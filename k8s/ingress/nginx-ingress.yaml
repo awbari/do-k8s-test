@@ -403,7 +403,6 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx
 spec:
-  replicas: 4
   minReadySeconds: 0
   revisionHistoryLimit: 10
   selector:
