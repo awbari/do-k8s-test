@@ -338,6 +338,7 @@ kind: Service
 metadata:
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: "true"
+    service.beta.kubernetes.io/do-loadbalancer-tls-passthrough: "true"
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
