@@ -3,8 +3,14 @@ kind: Ingress
 metadata:
   name: ingress
   namespace: test
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
+  tls:
+  - secretName: test-app-tls
+    hosts:
+    - whoami.example.com
   rules:
     - host: whoami.nalut.de
       http:
