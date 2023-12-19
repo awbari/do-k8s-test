@@ -14,5 +14,6 @@ spec:
             backend:
               service:
                 name: test-app
+                namespace: test
                 port:
                   number: 80
