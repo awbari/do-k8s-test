@@ -1,3 +1,7 @@
+variable "SOPS_AGE" {
+  type        = string
+  sensitive   = true
+}
 
 variable "GH_TOKEN" {
   type        = string

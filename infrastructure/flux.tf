@@ -1,4 +1,15 @@
 
+resource "kubernetes_secret" "sops_age" {
+  metadata {
+    name = "sops-age"
+    namespace = "flux-system"
+  }
+
+  data = {
+    "age.agekey" = var.SOPS_AGE
+  }
+}
+
 resource "tls_private_key" "flux" {
   algorithm   = "ECDSA"
   ecdsa_curve = "P256"
