@@ -55,6 +55,7 @@ spec:
         image: registry.k8s.io/external-dns/external-dns:v0.14.0
         args:
         - --source=ingress
+        - --source=service
         - --provider=digitalocean
         - --interval=3m
         env:
