@@ -14,5 +14,6 @@ patches:
       spec:
         decryption:
           provider: sops
+          interval: 1m0s
           secretRef:
             name: sops-age
