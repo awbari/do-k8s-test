@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-wcard
-  namepace: test
+  namespace: test
 spec:
   acme:
     email: jan@ubari.de
