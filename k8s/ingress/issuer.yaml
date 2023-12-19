@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-wcard
+  namespace: ingress
+spec:
+  acme:
+    email: jan@ubari.de
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-wcard-private
+    solvers:
+      - dns01:
+          digitalocean:
+            tokenSecretRef:
+              name: ingress-secret
+              key: DO_API_KEY
