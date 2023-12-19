@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - flux-system
   - ingress
-  - test-app
+  # - test-app
