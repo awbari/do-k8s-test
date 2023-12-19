@@ -403,6 +403,7 @@ metadata:
   name: ingress-nginx-controller
   namespace: ingress-nginx
 spec:
+  replicas: 4
   minReadySeconds: 0
   revisionHistoryLimit: 10
   selector:
@@ -423,7 +424,6 @@ spec:
         app.kubernetes.io/part-of: ingress-nginx
         app.kubernetes.io/version: 1.8.2
     spec:
-      replicas: 4
       containers:
       - args:
         - /nginx-ingress-controller
