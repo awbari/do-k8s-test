@@ -10,7 +10,7 @@ spec:
     hosts:
       - "*.nalut.de"
   rules:
-    - host: whoami.nalut.de
+    - host: whoami2.nalut.de
       http:
         paths:
           - path: /
