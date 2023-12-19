@@ -22,7 +22,7 @@ metadata:
   name: nalut.de
   namespace: test
 spec:
-  secretName: nalut.de-tls
+  secretName: nalut.de
   issuerRef:
     name: letsencrypt-wcard
     kind: Issuer

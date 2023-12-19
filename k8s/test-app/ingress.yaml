@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - secretName: nalut.de-tls # same as in certificate
+  - secretName: nalut.de # same as in certificate
     hosts:
       - "*.nalut.de"
   rules:
