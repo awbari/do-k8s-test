@@ -54,10 +54,10 @@ spec:
       - name: external-dns
         image: registry.k8s.io/external-dns/external-dns:v0.14.0
         args:
-        - --log-level=trace
+        - --log-level=debug
         - --source=ingress
         - --provider=digitalocean
-        - --interval=1m
+        - --interval=3m
         env:
         - name: DO_TOKEN
           valueFrom:
