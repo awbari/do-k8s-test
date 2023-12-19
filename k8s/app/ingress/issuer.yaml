@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-wcard
-  namespace: ingress
+  namespace: app
 spec:
   acme:
     email: jan@ubari.de
@@ -15,19 +15,3 @@ spec:
             tokenSecretRef:
               name: do-api-key
               key: DO_APIKEY
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: nalut.de
-  namespace: ingress
-spec:
-  secretName: nalut.de
-  issuerRef:
-    name: letsencrypt-wcard
-    kind: Issuer
-    group: cert-manager.io
-  commonName: "*.nalut.de"
-  dnsNames:
-    - "nalut.de"
-    - "*.nalut.de"

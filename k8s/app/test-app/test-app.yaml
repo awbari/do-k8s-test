@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+  namespace: ingress
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+        - name: test
+          image: ghcr.io/traefik/whoami:v1.10.1
+          resources:
+            requests:
+              cpu: 50m
+              memory: 90Mi
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app
+  namespace: ingress
+spec:
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 80
+  selector:
+    app: test-app
