@@ -16,6 +16,10 @@ spec:
       containers:
         - name: test
           image: ghcr.io/traefik/whoami:KUSTOMIZE_IMAGE_VERSION
+          resources:
+            requests:
+              cpu: 50m
+              memory: 90Mi
           ports:
             - name: http
               containerPort: 80
