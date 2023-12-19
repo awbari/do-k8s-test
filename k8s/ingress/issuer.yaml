@@ -1,8 +1,7 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: letsencrypt-wcard
-  namespace: ingress
 spec:
   acme:
     email: jan@ubari.de
@@ -20,7 +19,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: nalut.de
-  namespace: ingress
+  namespace: test
 spec:
   secretName: nalut.de
   issuerRef:
