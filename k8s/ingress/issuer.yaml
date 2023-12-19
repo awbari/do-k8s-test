@@ -24,7 +24,7 @@ spec:
   secretName: nalut.de-tls
   issuerRef:
     name: letsencrypt-wcard
-    kind: Issuer
+    kind: ClusterIssuer
     group: cert-manager.io
   commonName: "*.nalut.de"
   dnsNames:
