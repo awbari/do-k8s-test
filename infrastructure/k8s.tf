@@ -14,3 +14,30 @@ resource "local_file" "kubeconfig" {
   content  = digitalocean_kubernetes_cluster.primary.kube_config[0].raw_config
   filename = "${path.module}/../config-do-test-cluster.yaml"
 }
+
+locals {
+  namespaces = toset([
+    "ingress",
+    "app",
+  ])
+}
+
+resource "kubernetes_namespace" "default_ns" {
+  for_each = local.namespaces
+  metadata {
+    name = each.key
+  }
+}
+
+resource "kubernetes_secret" "do_api_key" {
+  for_each = local.namespaces
+
+  metadata {
+    name = "do-api-key"
+    namespace = each.key
+  }
+
+  data = {
+    "DO_APIKEY" = var.DO_APIKEY
+  }
+}

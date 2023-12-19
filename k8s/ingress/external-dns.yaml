@@ -64,5 +64,5 @@ spec:
         - name: DO_TOKEN
           valueFrom:
             secretKeyRef:
-              name: ingress-secret
-              key: DO_API_KEY
+              name: do-api-key
+              key: DO_APIKEY

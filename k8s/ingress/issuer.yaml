@@ -13,8 +13,8 @@ spec:
       - dns01:
           digitalocean:
             tokenSecretRef:
-              name: ingress-secret
-              key: DO_API_KEY
+              name: do-api-key
+              key: DO_APIKEY
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
