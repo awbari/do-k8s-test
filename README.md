@@ -31,11 +31,11 @@ Installation requires a few manual steps:
 * Create a spaces bucket and access keys
 * Generate age secrets via `age-keygen` and copy to `~/.config/sops/age/keys.txt`
 * Paste everything in `infrastructure/secrets.yaml`
-* Encrypt using `sops -d -i infrastructure/secrets.yaml`
+* Encrypt using `sops -e -i infrastructure/secrets.yaml`
 
 ### Deploy terraform
 
-Basic infrastructure is deployed using terraform, terragrunt ans sops. The age key for flux is the same as for decrypting the secrets file (you may generate another one). 
+Basic infrastructure is deployed using terraform, terragrunt and sops. The age key for flux is the same as for decrypting the secrets file (you may generate another one). 
 
 Two default namespaces are generated: 
 * `ingress` for external-dns, cert-manager and nginx-ingress
